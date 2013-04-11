@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
-  
+
   def index
     @products = Product.all
 
@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     # @id = params=[:id]
-
+    
     @product = Product.find(params[:id]) 
     respond_to do |format|
       format.html # show.html.erb

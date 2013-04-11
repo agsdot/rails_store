@@ -20,8 +20,14 @@
     <%= f.text_field :rating %>
   </div>
   <div class="field">
-    <%= f.label :product_id %><br />
-    <%= f.number_field :product_id %>
+
+    <% if @product %>
+      <input type="hidden" name='review[product_id]' value='<%= @product.id %>'/>
+    <% else %>
+      <%= f.label :product_id %><br />
+      <%= f.number_field :product_id %>
+    <% end %>
+
   </div>
   <div class="actions">
     <%= f.submit %>
