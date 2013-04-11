@@ -25,7 +25,15 @@
       <input type="hidden" name='review[product_id]' value='<%= @product.id %>'/>
     <% else %>
       <%= f.label :product_id %><br />
-      <%= f.number_field :product_id %>
+      
+      <select name='review[product_id]'>
+        <% @products.each do |product| %>
+          <option value='<%= product.id %>'>
+            <%= product.name %>
+          </option>
+        <% end %>
+      </select>      
+
     <% end %>
 
   </div>
