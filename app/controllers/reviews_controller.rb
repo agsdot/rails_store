@@ -39,6 +39,9 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1/edit
   def edit
+    @product = Product.find(params[:product_id]) if params[:product_id]
+
+    @products = Product.all
     @review = Review.find(params[:id])
   end
 

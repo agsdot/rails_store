@@ -10,19 +10,30 @@
   <%= @product.price %>
 </p>
 
+<p>
+  <b>Description:</b>
+  <%= @product.description %>
+</p>
+
+<p>
+  <b>Image URL:</b>
+  <%= @product.image_url %>
+</p>
+
+<p>
+  <b>In Cart:</b>
+  <%= @product.in_cart %>
+</p>
 
 
 
 <b>Reviews:</b>
-
 <ol>
 <% @reviews.each do |review| %>
   <li><%= review.body %> <%= review.rating %></li>
 <% end %>
 </ol>
-
-<p>
-  <b>Add Review: </b><a href="/reviews/new?product_id=<%= @product.id %>">Create a new review </a>
+<p><b>Add Review: </b><a href="/reviews/new?product_id=<%= @product.id %>">Create a new review </a>
 </p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
