@@ -45,6 +45,13 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def add
+    @product = Product.find(params[:id])
+  end
+
+  def remove
+    @product = Product.find(params[:id])
+  end
   # POST /products
   # POST /products.json
   def create
