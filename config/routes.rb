@@ -1,5 +1,5 @@
 RailsStore::Application.routes.draw do
-  resources :reviews
+  resources :reviews, :only => [:new, :create]
 
   resources :products
 

@@ -46,7 +46,16 @@ class ProductsController < ApplicationController
   end
 
   def add
-    @product = Product.find(params[:id])
+    # @product = Product.find(params[:id])
+
+    id = params[:id]
+
+    @product = Product.find id
+    @product.in_cart = true
+    @product.save
+    
+    # @product.update_attributes({:in_cart => true})
+
   end
 
   def remove

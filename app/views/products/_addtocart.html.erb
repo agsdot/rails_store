@@ -1,0 +1,21 @@
+# <%= form_for(@product) do |f| %>
+
+#   <div class="field">
+#     <%= f.label :in_cart %><br />
+#     <%= f.check_box :in_cart %>
+#   </div>
+#   <div class="actions">
+#     <%= f.submit %>
+#   </div>
+# <% end %>
+
+
+<form action="/products/<%= @product.id %>/addtocart" method="post">
+
+
+  <div class="actions">
+    <input name="commit" type="submit" value="Add Product" />
+  </div>
+
+
+</form>
