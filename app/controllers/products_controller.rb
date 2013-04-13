@@ -24,8 +24,6 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-
-
     @product = Product.find(params[:id]) 
     # @product_id = @product.id
     # @review = Review.find(@product_id)
@@ -43,6 +41,7 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   def new
     @product = Product.new
+    #@product = Product.find(params[:product_id])
 
     respond_to do |format|
       format.html # new.html.erb

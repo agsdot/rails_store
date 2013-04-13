@@ -1,0 +1,29 @@
+div {
+ border: dashed;
+ border-color: green ;
+
+
+}
+
+body {
+  background-color: #006699;
+  margin: 0;
+  padding: 0;
+}
+
+#outer-container {
+  margin: auto;
+  width: 900px;
+}
+
+#inner-container {
+  background-color: white;
+  bottom: 16px;
+  box-shadow: 0px 0px 40px #999;
+  overflow: scroll;
+  padding: 30px;
+  position: absolute;
+  top: 16px;
+  width: 900px;
+/*  height: 900px;
+*/}
