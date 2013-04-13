@@ -1,0 +1,23 @@
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+      
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="cart">
+  <% if @product.in_cart == false %>
+     <%= f.hidden_field :in_cart, :value => true %>
+     <%= f.submit "Add to Cart" %>
+  <% else %>
+     <%= f.hidden_field :in_cart, :value => false %>
+     <%= f.submit "Remove from Cart" %>
+  <% end %>
+  </div>
+<% end %>

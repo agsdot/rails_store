@@ -35,6 +35,8 @@
 </ol>
 <p><b>Add Review: </b><a href="/reviews/new?product_id=<%= @product.id %>">Create a new review </a>
 </p>
+<p><%= render 'cart' %></p>
+<p><%= render 'addcart' %></p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

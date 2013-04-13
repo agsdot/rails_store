@@ -2,6 +2,16 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
 
+
+  before_filter :products_in_cart
+
+  def products_in_cart
+    @products_in_cart = Product.where(:in_cart => true )
+    @prices_in_cart = @products_in_cart.map{|product| product.price } #array output
+    @total_price = @prices_in_cart.reduce(:+)
+  end
+
+
   def index
     @products = Product.all
 
