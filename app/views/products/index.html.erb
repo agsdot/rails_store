@@ -4,7 +4,6 @@
   <tr>
     <th>Name</th>
     <th>Price</th>
-    <th>Desc</th>
     <th>Image</th>
     <th>In Cart</th>
     <th></th>
@@ -15,8 +14,7 @@
   <tr>
     <td><%= product.name %></td>
     <td><%= product.price %></td>
-    <td><%= product.description %></td>
-    <td><img src="<%= product.image_url %>" width="75" /></td>
+    <td><img src="<%= product.image_url %>" style="height:75px;" /></td>
     <td><%= product.in_cart %></td>
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
