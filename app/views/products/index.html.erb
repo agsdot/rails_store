@@ -8,11 +8,11 @@
 
     <p class="productname"><%= product.name %></p>
     
-    <p class="split-para"><%= product.price %>
+    <p class="split-para"><%= number_to_currency(product.price) %>
     <% if product.in_cart == true %>
     <span>In Cart</span></p>
     <% else %>
-    <span><%= link_to 'Add to Cart', product, method: :post %></span></p>
+    <span class="btn btn-mini btn-success" type="button"><%= link_to 'Add to Cart', product, method: :post %></span></p>
     <% end %>
 
     <!-- <p><%= link_to 'Edit', edit_product_path(product) %></p>

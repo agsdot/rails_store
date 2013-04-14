@@ -4,12 +4,15 @@
 <% @products_in_cart.each do |product| %>
 <tr>
  <td><%= product.name %> </td>
- <td><%= number_to_currency(product.price) %> </td>
+ <td class="price"><%= number_to_currency(product.price) %> </td>
 </tr>
  <% end %>
 <tr>
- <td></td>
- <td>----------</td>
+ <td>&#32;</td>
+ <td>&#32;</td>
+  <td>&#32;</td>
+   <td>&#32;</td>
+    <td>&#32;</td>
 </tr> 
 <tr>
  <td>Total price: </td>
