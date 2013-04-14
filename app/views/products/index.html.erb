@@ -7,15 +7,27 @@
   <div class='listings'>
     <p><%= link_to image_tag( product.image_url ), product %></p>
 
-    <p><%= product.name %></p>
-    <p><%= product.price %></p>
-
+    <p class="productname"><%= product.name %></p>
+    <!-- <p><div class="span4 productprice"><%= product.price %>
+    </div><div class="productstatus span6 offset6">
     <% if product.in_cart == true %>
-       <p>In Cart</p>
+       In Cart</div>
     <% else %>
-      <p><%= link_to 'Add to Cart', product, method: :post %></p> 
+      <%= link_to 'Add to Cart', product, method: :post %></div>  
     <% end %>
-    
+    </p>
+ -->
+    <p><div class="productprice"><%= product.price %>........
+    <% if product.in_cart == true %>
+       In Cart</div>
+    <% else %>
+      <%= link_to 'Add to Cart', product, method: :post %></div>  
+    <% end %>
+    </p>
+
+
+
+
     <!-- <p><%= link_to 'Edit', edit_product_path(product) %></p>
     <p><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure you want to remove the product?' } %></p>
  -->  </div>

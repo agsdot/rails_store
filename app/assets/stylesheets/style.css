@@ -52,3 +52,9 @@ body {
   width: 150px;
   height:150px;
 }
+
+.listings .productname, .listings .productprice {
+  text-align: left;
+  margin-left: 25px;
+
+}
