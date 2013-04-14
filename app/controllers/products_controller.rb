@@ -54,21 +54,33 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  def add
+  def add_to_cart
     # @product = Product.find(params[:id])
 
     id = params[:id]
-
     @product = Product.find id
-    @product.in_cart = true
+    # @product.in_cart = true
+    @product[:in_cart] = 't'
+    
+    # @product.update_attributes({:in_cart => true})
+    respond_to do |format|
+      @product.update_attributes(params[:product])
+      format.html { redirect_to products_url, notice: 'Product was successfully added to cart.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def remove_from_cart
+    @product = Product.find(params[:id])
+    @product[:in_cart] = 'f'
     @product.save
     
     # @product.update_attributes({:in_cart => true})
-
-  end
-
-  def remove
-    @product = Product.find(params[:id])
+    respond_to do |format|
+      @product.update_attributes(params[:product])
+      format.html { redirect_to products_url, notice: 'Product was successfully added to cart.' }
+      format.json { head :no_content }
+    end
   end
   # POST /products
   # POST /products.json

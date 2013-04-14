@@ -5,6 +5,8 @@ RailsStore::Application.routes.draw do
   resources :products
 
   # post '/products/:id/addtocart(.:format)', :controller => 'products', :action => 'add', :as => 'add_product'
+  post '/products/:id' => 'products#add_to_cart', :as => 'add_product' 
+  post '/products/:id' => 'products#remove_from_cart', :as => 'remove_product'
 
   # post '/products/:id/removefromcart(.:format)', :controller => 'products', :action => 'remove', :as => 'remove_product'
   
