@@ -1,20 +1,14 @@
 <h1>Mobility Store</h1><h3>...where it's all meta</h3>
+<p><%= link_to 'New Product', new_product_path %>
 
+</p>
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Price</th>
-    <th>Image</th>
-    <th>In Cart</th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @products.each do |product| %>
   <div class='listings'>
+    <p><%= link_to image_tag( product.image_url ), product %></p>
+
     <p><%= product.name %></p>
     <p><%= product.price %></p>
-    <p><img src="<%= product.image_url %>" /></p>
 
     <% if product.in_cart == true %>
        <p>In Cart</p>
@@ -22,14 +16,12 @@
       <p><%= link_to 'Add to Cart', product, method: :post %></p> 
     <% end %>
     
-    <p><%= link_to 'Show', product %></p>
-    <p><%= link_to 'Edit', edit_product_path(product) %></p>
+    <!-- <p><%= link_to 'Edit', edit_product_path(product) %></p>
     <p><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure you want to remove the product?' } %></p>
-  </div>
+ -->  </div>
 <% end %>
 </table>
 
-<%= link_to 'New Product', new_product_path %>
 
 
 <br />

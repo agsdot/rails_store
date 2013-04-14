@@ -1,8 +1,6 @@
 div {
  border: dashed;
  border-color: green ;
-
-
 }
 
 body {
@@ -31,6 +29,8 @@ body {
 .cart {
   background-color: #FF9999;
   padding: 0 10px;
+  margin-top: 15px;
+  margin-left: -15px;
   height: 400px;
   border: 1px solid #ccc;
   box-shadow: 0px 0px 10px #999;
@@ -49,6 +49,6 @@ body {
 }
 
 .listings img {
-
-  height:120px;
+  width: 150px;
+  height:150px;
 }
