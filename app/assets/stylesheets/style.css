@@ -30,18 +30,25 @@ body {
 
 .cart {
   background-color: #FF9999;
-  position: absolute;
-  /*float:right;*/
-  right:50px;
-  top:50px;
-  height: 250px;
+  padding: 0 10px;
+  height: 400px;
   border: 1px solid #ccc;
   box-shadow: 0px 0px 10px #999;
-  margin-left: 40px;
-  padding: 0 10px;
+
 
 }
 
 .description {
   max-width: 600px;
+}
+.listings {
+  display: inline-block;
+  text-align: center;
+  width: 200px;
+
+}
+
+.listings img {
+
+  height:120px;
 }

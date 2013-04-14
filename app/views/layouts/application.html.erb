@@ -9,7 +9,19 @@
   <body id="home">
     <div id="outer-container">
       <div id="inner-container">
-        <%= yield %>
+                
+        <div class="container-fluid">
+          <div class="row-fluid">
+            <div class="span9">
+              <%= yield %>
+            </div>
+            <div class="span3">
+              <%= render 'cart' %>
+            </div>
+          </div>
+        </div>
+
+      
       </div>
     </div>
 </body>
