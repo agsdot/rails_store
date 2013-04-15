@@ -1,42 +1,61 @@
 <p id="notice"><%= notice %></p>
+<div class="row-fluid">
+  <div class="span12">
+    <div class="row-fluid">
+      <div class="span6">
+        <div class="showimage">
+          <img src="<%= @product.image_url %>" />
+        </div>
 
-<p>
-  <b>Name:</b>
+      </div>
+      <div class="span6 pagefunctions">
+      <p class="showpageprice">
+        <%= number_to_currency(@product.price) %>
+      </p>    
+      <p><%= render 'addcart' %></p>
+      
+      <% if @reviews.count == 1 %>
+      <p><%= @reviews.count %> review</p>
+      <% else %>
+      <p><%= @reviews.count %> reviews</p>
+
+      <% end %>
+
+      <p class="btn btn-success"><%= link_to 'Edit Product', edit_product_path(@product) %></p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<p class="showpagename">
   <%= @product.name %>
 </p>
 
-<p>
-  <b>Price:</b>
-  <%= @product.price %>
-</p>
-
-<p class="description">
+<p class="showpagedescription">
   <b>Description:</b>
   <%= @product.description %>
 </p>
 
+<p class="showpagereviews">
+Reviews:
 <p>
-  <b>Image URL:</b>
-  <img src="<%= @product.image_url %>" />
-</p>
-
-<b>Reviews:</b>
-<ol>
 <% @reviews.each do |review| %>
-  <li><%= review.body %> <%= review.rating %></li>
+  <p class="showpagestars"><%  review.rating.round.times do %><img src="http://cdn1.iconfinder.com/data/icons/diagona/icon/16/031.png" />
+<% end %></p>
+  <p class="showpageonereview"><%= review.body %>
 <% end %>
-</ol>
-<p><b>Add Review: </b><a href="/reviews/new?product_id=<%= @product.id %>">Create a new review </a>
+</p>
+<p class="showpageaddreview btn btn-success"><a href="/reviews/new?product_id=<%= @product.id %>">Add Review</a>
 </p>
 
-<p>
+<!-- <p>
   <b>In Cart:</b>
   <%= @product.in_cart %>
-</p>
+</p> -->
 
-<p><%= render 'addcart' %></p>
-
-
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
+<!-- <p><%= render 'addcart' %></p> |
 <%= link_to 'Back', products_path %>
+ -->

@@ -1,14 +1,12 @@
-div {
+/*div {
  border: dashed;
  border-color: green ;
-}
+}*/
 
 body {
   background-color: #006699;
   background-image:url('background-wallpaper.jpg');
-  background-size: 100%;
-  /*background-repeat:no-repeat;*/
-  
+  background-size: 100%;  
   margin: 0;
   padding: 0;
 }
@@ -33,7 +31,7 @@ body {
   background-color: #FF9999;
   padding: 0 10px;
   margin-top: 15px;
-  margin-left: -15px;
+  margin-left: 25px;
   height: 400px;
   border: 1px solid #ccc;
   box-shadow: 0px 0px 10px #999;
@@ -44,9 +42,7 @@ td
 padding:5px;
 }
 
-.description {
-  max-width: 600px;
-}
+
 .listings {
   display: inline-block;
   text-align: center;
@@ -70,4 +66,47 @@ padding:5px;
 
 .price {
   text-align: right;
+}
+
+div img {
+  width: 300px;
+  height: 300px;
+  box-shadow: 0px 0px 4px #999;
+  border-radius: 25px;
+}
+
+p img {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+}
+
+.pagefunctions {
+  text-align: center;
+  font-weight: bold;
+}
+
+.pagefunctions p {
+  font-size: 20px;
+}
+
+.showpageprice {
+  margin-top: 15px;
+}
+
+.showpagename, .showpagereviews {
+  margin: 15px 0;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.showpagestars, .showpageonereview, .showpagedescription {
+  max-width: 700px;
+  margin-left: 20px;
+}
+
+.showpageaddreview {
+  margin: 0 0 15px 550px;
+  font-weight: bold;
+  font-size: 20px;
 }
